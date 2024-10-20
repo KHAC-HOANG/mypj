@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa Hàng Thuốc Đông Y</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>Cửa Hàng Thuốc Đông Y</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="login.html">Đăng Nhập</a></li>
+                <li><a href="register.html">Đăng Ký</a></li>
+                <li><a href="cart.html">Giỏ Hàng</a></li>
+                <li><a href="gioithieu.html">Giới thiệu</a></li>
+            </ul>
+        </nav>
+        <ul>
+            <li>Email: thuocdongyVietNam84@gmail.com</li>
+            <li>Facebook: <a href="https://www.facebook.com/DongYBaoBinh?mibextid=LQQJ4d">thuocdongyVietNam84</a></li>
+        </ul>
+        <hr>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Tìm kiếm sản phẩm...">
+            <button onclick="searchProduct()">Tìm kiếm</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="products">
+            <h2>Sản phẩm</h2>
+            <div id="product-list" class="product-grid">
+                <!-- Danh sách sản phẩm -->
+                <!-- Mỗi sản phẩm có id riêng cho các input và select -->
+                <div class="product" data-name="Tam Thất">
+                    <img src="https://suckhoedoisong.qltns.mediacdn.vn/324455921873985536/2022/10/4/1-16648480652461195980611.jpg" alt="Tam Thất">
+                    <h3>Tam Thất</h3>
+                    <div class="main">
+                        <h4>Giúp giảm cholesterol, cải thiện tuần hoàn máu và chống lão hóa.</h4>
+                    </div>
+                    <p>Giá: 2.000.000 VNĐ/kg</p>
+                    <label for="weightAmountTamThat">Số lượng</label>
+                    <input type="number" id="weightAmountTamThat" placeholder="Số lượng">
+                    <select id="weightTypeTamThat">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Tam Thất', 2000000, 'TamThat')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <!-- Tiếp tục với các sản phẩm khác -->
+                <div class="product" data-name="Cam Thảo">
+                    <img src="https://media.vov.vn/sites/default/files/styles/large/public/2023-07/tac_dung_cua_cam_thao_2.png.jpg" alt="Cam Thảo">
+                    <h3>Cam Thảo</h3>
+                    <div class="main">
+                        <h4>Có tác dụng làm dịu dạ dày, giảm viêm phế quản, chống dị ứng.</h4>
+                    </div>
+                    <p>Giá: 200.000 VNĐ/kg</p>
+                    <label for="weightAmountCamThao">Số lượng</label>
+                    <input type="number" id="weightAmountCamThao" placeholder="Số lượng">
+                    <select id="weightTypeCamThao">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Cam Thảo', 200000, 'CamThao')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <!-- Thêm các sản phẩm khác với cấu trúc tương tự -->
+                <!-- Chú ý thay đổi id trong input, select và truyền thêm tham số idSuffix vào hàm addToCart -->
+
+                <!-- Ví dụ với sản phẩm Đẳng Sâm -->
+                <div class="product" data-name="Đẳng Sâm">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrojG-6LGFQSG98xY624B4a00XgO3PsBLJWQ&s" alt="Đẳng Sâm">
+                    <h3>Đẳng Sâm</h3>
+                    <div class="main">
+                        <h4>Giúp giảm cholesterol, cải thiện tuần hoàn máu và chống lão hóa.</h4>
+                    </div>
+                    <p>Giá: 300.000 VNĐ/kg</p>
+                    <label for="weightAmountDangSam">Số lượng</label>
+                    <input type="number" id="weightAmountDangSam" placeholder="Số lượng">
+                    <select id="weightTypeDangSam">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Đẳng Sâm', 300000, 'DangSam')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <!-- Tiếp tục cho các sản phẩm còn lại... -->
+                <!-- Hãy đảm bảo mỗi sản phẩm có id duy nhất cho các input và select -->
+                 <div class="product" data-name="Bạch Truật">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH4ZFGgg3jg01uZ7iobXwA1Mfcv7MddkeHCQ&s" alt="Bạch Truật">
+                    <h3>Bạch Truật</h3>
+                    <div class="main">
+                        <h4>Giúp điều hòa đường ruột, chống viêm loét dạ dày.</h4>
+                    </div>
+                    <p>Giá: 250.000 VNĐ/kg</p>
+                    <label for="weightAmountBachTruat">Số lượng</label>
+                    <input type="number" id="weightAmountBachTruat" placeholder="Số lượng">
+                    <select id="weightTypeBachTruat">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Bạch Truật', 250000, 'BachTruat')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Câu Kỷ Tử">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1EqAO9MJ8ZomgHsXMhZfbzPv7IQinhYxRzw&s" alt="Câu Kỷ Tử">
+                    <h3>Câu Kỷ Tử</h3>
+                    <div class="main">
+                        <h4>Giúp cải thiện sức khỏe tim mạch, hỗ trợ điều trị bệnh tiểu đường.</h4>
+                    </div>
+                    <p>Giá: 400.000 VNĐ/kg</p>
+                    <label for="weightAmountCauKyTu">Số lượng</label>
+                    <input type="number" id="weightAmountCauKyTu" placeholder="Số lượng">
+                    <select id="weightTypeCauKyTu">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Câu Kỷ Tử', 400000, 'CauKyTu')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Hoài Sơn">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS4xsnAE7G4ZfZ4K_ddBVzgXbIg9paU_LFaw&s" alt="Hoài Sơn">
+                    <h3>Hoài Sơn</h3>
+                    <div class="main">
+                        <h4>Giúp bổ phổi, dạ dày, tỳ vị, hỗ trợ tiêu hóa, cải thiện chức năng sinh dục.</h4>
+                    </div>
+                    <p>Giá: 200.000 VNĐ/kg</p>
+                    <label for="weightAmountHoaiSon">Số lượng</label>
+                    <input type="number" id="weightAmountHoaiSon" placeholder="Số lượng">
+                    <select id="weightTypeHoaiSon">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Hoài Sơn', 200000, 'HoaiSon')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Nhục Thung Dung">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJHAYf7elXOnoh2PdRd2t1pT4Qt5BCbG4WgQ&s" alt="Nhục Thung Dung">
+                    <h3>Nhục Thung Dung</h3>
+                    <div class="main">
+                        <h4>Tăng cường sinh lực, bổ thận, tráng dương, điều trị chứng liệt dương, vô sinh.</h4>
+                    </div>
+                    <p>Giá: 2.000.000 VNĐ/kg</p>
+                    <label for="weightAmountNhucThungDung">Số lượng</label>
+                    <input type="number" id="weightAmountNhucThungDung" placeholder="Số lượng">
+                    <select id="weightTypeNhucThungDung">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Nhục Thung Dung', 2000000, 'NhucThungDung')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Thục Địa">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2s6zMlBM2QBa0VJOofPxvdTfWIK2i_usJFA&s" alt="Thục Địa">
+                    <h3>Thục Địa</h3>
+                    <div class="main">
+                        <h4>Giúp tăng cường sức đề kháng, hỗ trợ điều trị bệnh thận và các vấn đề về máu.</h4>
+                    </div>
+                    <p>Giá: 500.000 VNĐ/kg</p>
+                    <label for="weightAmountThucDia">Số lượng</label>
+                    <input type="number" id="weightAmountThucDia" placeholder="Số lượng">
+                    <select id="weightTypeThucDia">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Thục Địa', 500000, 'ThucDia')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Sa Nhân">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW0gvZvLASM5Ga_4dW2PPYWFwVNCkPTy_F4Q&s" alt="Sa Nhân">
+                    <h3>Sa Nhân</h3>
+                    <div class="main">
+                        <h4>Cải thiện chức năng đường ruột, hỗ trợ điều trị bệnh viêm loét dạ dày.</h4>
+                    </div>
+                    <p>Giá: 1.000.000 VNĐ/kg</p>
+                    <label for="weightAmountSaNhan">Số lượng</label>
+                    <input type="number" id="weightAmountSaNhan" placeholder="Số lượng">
+                    <select id="weightTypeSaNhan">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Sa Nhân', 1000000, 'SaNhan')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Bạch Thược">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOrUo39lnByen5hw0QKSjvhOy9XeEn2Cu_RA&s" alt="Bạch Thược">
+                    <h3>Bạch Thược</h3>
+                    <div class="main">
+                        <h4>Giảm viêm, tăng cường tuần hoàn máu, điều hòa nội tiết.</h4>
+                    </div>
+                    <p>Giá: 400.000 VNĐ/kg</p>
+                    <label for="weightAmountBachThuoc">Số lượng</label>
+                    <input type="number" id="weightAmountBachThuoc" placeholder="Số lượng">
+                    <select id="weightTypeBachThuoc">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Bạch Thược', 400000, 'BachThuoc')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Ngũ Vị Tử">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStFf0bX3J6qw5WnCBrJA3kqCq66cpQboXpng&s" alt="Ngũ Vị Tử">
+                    <h3>Ngũ Vị Tử</h3>
+                    <div class="main">
+                        <h4>Giúp tăng cường chức năng gan, thận, phổi, hỗ trợ điều trị viêm gan, viêm phế quản.</h4>
+                    </div>
+                    <p>Giá: 600.000 VNĐ/kg</p>
+                    <label for="weightAmountNguViTu">Số lượng</label>
+                    <input type="number" id="weightAmountNguViTu" placeholder="Số lượng">
+                    <select id="weightTypeNguViTu">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Ngũ Vị Tử', 600000, 'NguViTu')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Cát Cánh">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsw1-Ey7V00S2rHDMQkWAefGS468iZjgKRcw&s" alt="Cát Cánh">
+                    <h3>Cát Cánh</h3>
+                    <div class="main">
+                        <h4>Trị ho, hen suyễn, viêm họng, phổi, giúp tiêu đờm.</h4>
+                    </div>
+                    <p>Giá: 300.000 VNĐ/kg</p>
+                    <label for="weightAmountCatCanh">Số lượng</label>
+                    <input type="number" id="weightAmountCatCanh" placeholder="Số lượng">
+                    <select id="weightTypeCatCanh">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Cát Cánh', 300000, 'CatCanh')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Ý Dĩ">
+                    <img src="https://cdn.nhathuoclongchau.com.vn/unsafe/800x0/https://cms-prod.s3-sgn09.fptcloud.com/hat_y_di_3_fec5b55420.jpg" alt="Ý Dĩ">
+                    <h3>Ý Dĩ</h3>
+                    <div class="main">
+                        <h4>Bồi bổ cơ thể, tăng cường sức khỏe, hỗ trợ tiêu hóa, giảm béo.</h4>
+                    </div>
+                    <p>Giá: 200.000 VNĐ/kg</p>
+                    <label for="weightAmountYDi">Số lượng</label>
+                    <input type="number" id="weightAmountYDi" placeholder="Số lượng">
+                    <select id="weightTypeYDi">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Ý Dĩ', 200000, 'YDi')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Xuyên Khung">
+                    <img src="https://mypharma.vn/wp-content/uploads/2021/09/3.jpg" alt="Xuyên Khung">
+                    <h3>Xuyên Khung</h3>
+                    <div class="main">
+                        <h4>Hoạt huyết, giảm đau, điều trị đau đầu, chóng mặt, viêm khớp.</h4>
+                    </div>
+                    <p>Giá: 500.000 VNĐ/kg</p>
+                    <label for="weightAmountXuyenKhung">Số lượng</label>
+                    <input type="number" id="weightAmountXuyenKhung" placeholder="Số lượng">
+                    <select id="weightTypeXuyenKhung">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Xuyên Khung', 500000, 'XuyenKhung')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Sinh Địa">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmaAdhHjWZ35nRIOjiqaI6QrMDPzC9X3d4tA&s" alt="Sinh Địa">
+                    <h3>Sinh Địa</h3>
+                    <div class="main">
+                        <h4>Hỗ trợ điều trị các bệnh về gan, tăng cường lưu thông máu.</h4>
+                    </div>
+                    <p>Giá: 200.000 VNĐ/kg</p>
+                    <label for="weightAmountSinhDia">Số lượng</label>
+                    <input type="number" id="weightAmountSinhDia" placeholder="Số lượng">
+                    <select id="weightTypeSinhDia">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Sinh Địa', 200000, 'SinhDia')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Bạch Chỉ">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeO--KaDTY2yi-yJ5_8e6z3mcTT4p8pgyurw&s" alt="Bạch Chỉ">
+                    <h3>Bạch Chỉ</h3>
+                    <div class="main">
+                        <h4>Giảm đau đầu, trị cảm lạnh, giảm đau xương khớp, tiêu viêm.</h4>
+                    </div>
+                    <p>Giá: 250.000 VNĐ/kg</p>
+                    <label for="weightAmountBachChi">Số lượng</label>
+                    <input type="number" id="weightAmountBachChi" placeholder="Số lượng">
+                    <select id="weightTypeBachChi">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Bạch Chỉ', 250000, 'BachChi')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Xạ Can">
+                    <img src="https://mplant.ump.edu.vn/wp-content/uploads/2021/03/xa-can-kho-1024x716.jpg" alt="Xạ Can">
+                    <h3>Xạ Can</h3>
+                    <div class="main">
+                        <h4>Giảm đau đầu, trị cảm lạnh, giảm đau xương khớp, tiêu viêm.</h4>
+                    </div>
+                    <p>Giá: 200.000 VNĐ/kg</p>
+                    <label for="weightAmountXaCan">Số lượng</label>
+                    <input type="number" id="weightAmountXaCan" placeholder="Số lượng">
+                    <select id="weightTypeXaCan">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Xạ Can', 200000, 'XaCan')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Hoàng Kỳ">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjCTmCZJGORGXFXaS96qDdBzKsP_GQVjqv9Q&s" alt="Hoàng Kỳ">
+                    <h3>Hoàng Kỳ</h3>
+                    <div class="main">
+                        <h4>Tăng cường sức đề kháng, hỗ trợ điều trị suy nhược cơ thể, bổ phổi.</h4>
+                    </div>
+                    <p>Giá: 500.000 VNĐ/kg</p>
+                    <label for="weightAmountHoangKy">Số lượng</label>
+                    <input type="number" id="weightAmountHoangKy" placeholder="Số lượng">
+                    <select id="weightTypeHoangKy">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Hoàng Kỳ', 500000, 'HoangKy')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Đan Sâm">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPmJQyHTQvKSllP49m0_DAscMHReaFfLpHfw&s" alt="Đan Sâm">
+                    <h3>Đan Sâm</h3>
+                    <div class="main">
+                        <h4>Hỗ trợ điều trị các bệnh tim mạch, cải thiện sức khỏe tim.</h4>
+                    </div>
+                    <p>Giá: 600.000 VNĐ/kg</p>
+                    <label for="weightAmountDanSam">Số lượng</label>
+                    <input type="number" id="weightAmountDanSam" placeholder="Số lượng">
+                    <select id="weightTypeDanSam">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Đan Sâm', 600000, 'DanSam')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Xa Tiền Tử">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXqiFx8icgR-DkTlLBsFCIdUsNaj_OMfyFoA&s" alt="Xa Tiền Tử">
+                    <h3>Xa Tiền Tử</h3>
+                    <div class="main">
+                        <h4>Lợi tiểu, chữa viêm đường tiết niệu, thanh nhiệt, giải độc.</h4>
+                    </div>
+                    <p>Giá: 200.000 VNĐ/kg</p>
+                    <label for="weightAmountXaTienTu">Số lượng</label>
+                    <input type="number" id="weightAmountXaTienTu" placeholder="Số lượng">
+                    <select id="weightTypeXaTienTu">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Xa Tiền Tử', 200000, 'XaTienTu')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Trạch Tả">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPmJQyHTQvKSllP49m0_DAscMHReaFfLpHfw&s" alt="Trạch Tả">
+                    <h3>Trạch Tả</h3>
+                    <div class="main">
+                        <h4>Giúp giảm cholesterol, cải thiện chức năng thận.</h4>
+                    </div>
+                    <p>Giá: 300.000 VNĐ/kg</p>
+                    <label for="weightAmountTrachTa">Số lượng</label>
+                    <input type="number" id="weightAmountTrachTa" placeholder="Số lượng">
+                    <select id="weightTypeTrachTa">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Trạch Tả', 300000, 'TrachTa')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+                
+                <div class="product" data-name="Mạch Môn">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXjD8YlLhg7DzUAwINlk-dj0b5mMYcmjZUkA&s" alt="Mạch Môn">
+                    <h3>Mạch Môn</h3>
+                    <div class="main">
+                        <h4>Tăng cường độ ẩm trong cơ thể, giảm triệu chứng khô cổ và họng.</h4>
+                    </div>
+                    <p>Giá: 500.000 VNĐ/kg</p>
+                    <label for="weightAmountMachMon">Số lượng</label>
+                    <input type="number" id="weightAmountMachMon" placeholder="Số lượng">
+                    <select id="weightTypeMachMon">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Mạch Môn', 500000, 'MachMon')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Tang Bạch Bì">
+                    <img src="https://www.binhdong.vn/wp-content/uploads/2022/09/Tang-bach-bi-sau-khi-duoc-dieu-che.jpg" alt="Tang Bạch Bì">
+                    <h3>Tang Bạch Bì</h3>
+                    <div class="main">
+                        <h4>Giảm viêm nhiễm ở đường hô hấp, làm mát cơ thể.</h4>
+                    </div>
+                    <p>Giá: 350.000 VNĐ/kg</p>
+                    <label for="weightAmountTangBachBi">Số lượng</label>
+                    <input type="number" id="weightAmountTangBachBi" placeholder="Số lượng">
+                    <select id="weightTypeTangBachBi">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Tang Bạch Bì', 350000, 'TangBachBi')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Ích Mẫu">
+                    <img src="https://suckhoedoisong.qltns.mediacdn.vn/zoom/600_315/Images/_OLD/2015/1-ichmau2-1438573223677-crop1438573242763p.jpg" alt="Ích Mẫu">
+                    <h3>Ích Mẫu</h3>
+                    <div class="main">
+                        <h4>Điều hòa kinh nguyệt, tăng cường tuần hoàn máu, hỗ trợ điều trị đau bụng kinh.</h4>
+                    </div>
+                    <p>Giá: 300.000 VNĐ/kg</p>
+                    <label for="weightAmountIchMau">Số lượng</label>
+                    <input type="number" id="weightAmountIchMau" placeholder="Số lượng">
+                    <select id="weightTypeIchMau">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Ích Mẫu', 300000, 'IchMau')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Thiên Hoa Phấn">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbJ5ukZznWLmM2Z6HPBdqGNyk7e_KjRItOeA&s" alt="Thiên Hoa Phấn">
+                    <h3>Thiên Hoa Phấn</h3>
+                    <div class="main">
+                        <h4>Giúp điều hòa đường huyết, giảm các triệu chứng tiểu đường.</h4>
+                    </div>
+                    <p>Giá: 400.000 VNĐ/kg</p>
+                    <label for="weightAmountThienHoaPhan">Số lượng</label>
+                    <input type="number" id="weightAmountThienHoaPhan" placeholder="Số lượng">
+                    <select id="weightTypeThienHoaPhan">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Thiên Hoa Phấn', 400000, 'ThienHoaPhan')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Ngưu Tất">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuu0n4BPhB4717Eb6sCPBJWd778SN1ymSXmA&s" alt="Ngưu Tất">
+                    <h3>Ngưu Tất</h3>
+                    <div class="main">
+                        <h4>Giúp hạ huyết áp, giảm cholesterol, hỗ trợ giảm đau nhức xương khớp.</h4>
+                    </div>
+                    <p>Giá: 350.000 VNĐ/kg</p>
+                    <label for="weightAmountNguuTat">Số lượng</label>
+                    <input type="number" id="weightAmountNguuTat" placeholder="Số lượng">
+                    <select id="weightTypeNguuTat">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Ngưu Tất', 350000, 'NguuTat')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Tang Kí Sinh">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3_XqS-qE9Zdwpvh8vWdFRA_xB4-Ni56lJrA&s" alt="Tang Kí Sinh">
+                    <h3>Tang Kí Sinh</h3>
+                    <div class="main">
+                        <h4>Bồi bổ xương khớp, điều trị phong thấp, giúp giảm đau nhức.</h4>
+                    </div>
+                    <p>Giá: 300.000 VNĐ/kg</p>
+                    <label for="weightAmountTangKiSinh">Số lượng</label>
+                    <input type="number" id="weightAmountTangKiSinh" placeholder="Số lượng">
+                    <select id="weightTypeTangKiSinh">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Tang Kí Sinh', 300000, 'TangKiSinh')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Bán Hạ">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4K1MIcAW7B0o9MukP7s5ZJSQHImvEsn9R7Q&s" alt="Bán Hạ">
+                    <h3>Bán Hạ</h3>
+                    <div class="main">
+                        <h4>Tiêu đờm, giảm ho, chống buồn nôn, hỗ trợ hệ tiêu hóa.</h4>
+                    </div>
+                    <p>Giá: 450.000 VNĐ/kg</p>
+                    <label for="weightAmountBanHa">Số lượng</label>
+                    <input type="number" id="weightAmountBanHa" placeholder="Số lượng">
+                    <select id="weightTypeBanHa">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Bán Hạ', 450000, 'BanHa')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Hà Thủ Ô">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMpRyAlL3EOdrtXvdTSn2JJpnTjnqSEodufA&s" alt="Hà Thủ Ô">
+                    <h3>Hà Thủ Ô</h3>
+                    <div class="main">
+                        <h4>Bổ huyết, tăng cường sức khỏe, giúp tóc đen mượt, chống lão hóa.</h4>
+                    </div>
+                    <p>Giá: 1.500.000 VNĐ/kg</p>
+                    <label for="weightAmountHaThuO">Số lượng</label>
+                    <input type="number" id="weightAmountHaThuO" placeholder="Số lượng">
+                    <select id="weightTypeHaThuO">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Hà Thủ Ô', 1500000, 'HaThuO')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Phục Linh">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX-Hqg5WjllK9fHViigHpSMsszHLkoNSmP6w&s" alt="Phục Linh">
+                    <h3>Phục Linh</h3>
+                    <div class="main">
+                        <h4>Hỗ trợ điều trị bệnh tiêu hóa, giúp thải độc cơ thể.</h4>
+                    </div>
+                    <p>Giá: 400.000 VNĐ/kg</p>
+                    <label for="weightAmountPhucLinh">Số lượng</label>
+                    <input type="number" id="weightAmountPhucLinh" placeholder="Số lượng">
+                    <select id="weightTypePhucLinh">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Phục Linh', 400000, 'PhucLinh')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Nhân Trần">
+                    <img src="https://suckhoedoisong.qltns.mediacdn.vn/324455921873985536/2022/6/26/5e87e90a8acf75c9d0ef048emua-cay-nhan-tran-o-dau1-1656235104724329481304.jpg" alt="Nhân Trần">
+                    <h3>Nhân Trần</h3>
+                    <div class="main">
+                        <h4>Hỗ trợ điều trị bệnh gan, viêm túi mật, giảm mỡ trong máu.</h4>
+                    </div>
+                    <p>Giá: 450.000 VNĐ/kg</p>
+                    <label for="weightAmountNhanTran">Số lượng</label>
+                    <input type="number" id="weightAmountNhanTran" placeholder="Số lượng">
+                    <select id="weightTypeNhanTran">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Nhân Trần', 450000, 'NhanTran')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Bồ Công Anh">
+                    <img src="https://suckhoedoisong.qltns.mediacdn.vn/324455921873985536/2022/7/7/photo-1657202966486-1657202967194860379056.jpg" alt="Bồ Công Anh">
+                    <h3>Bồ Công Anh</h3>
+                    <div class="main">
+                        <h4>Hỗ trợ điều trị viêm gan, viêm nhiễm, làm mát cơ thể.</h4>
+                    </div>
+                    <p>Giá: 150.000 VNĐ/kg</p>
+                    <label for="weightAmountBoCongAnh">Số lượng</label>
+                    <input type="number" id="weightAmountBoCongAnh" placeholder="Số lượng">
+                    <select id="weightTypeBoCongAnh">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Bồ Công Anh', 150000, 'BoCongAnh')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Quế Chi">
+                    <img src="https://www.thuocdantoc.org/wp-content/uploads/2019/11/que-chi.jpg" alt="Quế Chi">
+                    <h3>Quế Chi</h3>
+                    <div class="main">
+                        <h4>Hỗ trợ điều trị viêm gan, viêm nhiễm, làm mát cơ thể.</h4>
+                    </div>
+                    <p>Giá: 400.000 VNĐ/kg</p>
+                    <label for="weightAmountQueChi">Số lượng</label>
+                    <input type="number" id="weightAmountQueChi" placeholder="Số lượng">
+                    <select id="weightTypeQueChi">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Quế Chi', 400000, 'QueChi')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Sa Sâm">
+                    <img src="https://www.thuocdantoc.org/wp-content/uploads/2019/07/cay-sa-sam-2.jpg" alt="Sa Sâm">
+                    <h3>Sa Sâm</h3>
+                    <div class="main">
+                        <h4>Tăng cường sức khỏe phổi, giúp trị các bệnh hô hấp mãn tính.</h4>
+                    </div>
+                    <p>Giá: 600.000 VNĐ/kg</p>
+                    <label for="weightAmountSaSam">Số lượng</label>
+                    <input type="number" id="weightAmountSaSam" placeholder="Số lượng">
+                    <select id="weightTypeSaSam">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Sa Sâm', 600000, 'SaSam')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Ngũ Gia Bì">
+                    <img src="https://amp.thaythuoccuaban.com/vithuoc/vithuocimages1/Ngu-gia-bi.jpg" alt="Ngũ Gia Bì">
+                    <h3>Ngũ Gia Bì</h3>
+                    <div class="main">
+                        <h4>Giảm đau nhức khớp, tăng cường chức năng gân cốt, hỗ trợ điều trị bệnh thấp khớp.</h4>
+                    </div>
+                    <p>Giá: 300.000 VNĐ/kg</p>
+                    <label for="weightAmountNguGiaBi">Số lượng</label>
+                    <input type="number" id="weightAmountNguGiaBi" placeholder="Số lượng">
+                    <select id="weightTypeNguGiaBi">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Ngũ Gia Bì', 300000, 'NguGiaBi')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Bạch Linh">
+                    <img src="https://cdn.youmed.vn/tin-tuc/wp-content/uploads/2022/01/Bach-linh-sau-khi-da-che-bien-dung-de-lam-thuoc.jpg" alt="Bạch Linh">
+                    <h3>Bạch Linh</h3>
+                    <div class="main">
+                        <h4>Giảm căng thẳng, tăng cường sức khỏe tổng thể, hỗ trợ điều trị mất ngủ.</h4>
+                    </div>
+                    <p>Giá: 500.000 VNĐ/kg</p>
+                    <label for="weightAmountBachLinh">Số lượng</label>
+                    <input type="number" id="weightAmountBachLinh" placeholder="Số lượng">
+                    <select id="weightTypeBachLinh">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Bạch Linh', 500000, 'BachLinh')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Kim Ngân Hoa">
+                    <img src="https://cdn.medigoapp.com/product/kim_ngan_hoa_6a0fd20692.jpg" alt="Kim Ngân Hoa">
+                    <h3>Kim Ngân Hoa</h3>
+                    <div class="main">
+                        <h4>Giúp kháng khuẩn, hỗ trợ điều trị các bệnh viêm da, viêm họng.</h4>
+                    </div>
+                    <p>Giá: 200.000 VNĐ/kg</p>
+                    <label for="weightAmountBachLinh">Số lượng</label>
+                    <input type="number" id="weightAmountBachLinh" placeholder="Số lượng">
+                    <select id="weightTypeBachLinh">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Kim Ngân Hoa', 200000, 'BachLinh')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Thiên Niên Kiện">
+                    <img src="https://cdn.medigoapp.com/product/tac_dung_cua_thien_nien_kien_ddc2248698.png" alt="Thiên Niên Kiện">
+                    <h3>Thiên Niên Kiện</h3>
+                    <div class="main">
+                        <h4>Hỗ trợ điều trị viêm khớp, phong thấp, giảm đau do thoái hóa khớp.</h4>
+                    </div>
+                    <p>Giá: 400.000 VNĐ/kg</p>
+                    <label for="weightAmountThienNienKien">Số lượng</label>
+                    <input type="number" id="weightAmountThienNienKien" placeholder="Số lượng">
+                    <select id="weightTypeThienNienKien">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Thiên Niên Kiện', 400000, 'ThienNienKien')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Đỗ Trọng">
+                    <img src="https://thuocdantoc.vn/wp-content/uploads/2019/04/do-trong.jpg" alt="Đỗ Trọng">
+                    <h3>Đỗ Trọng</h3>
+                    <div class="main">
+                        <h4>Giúp tăng cường sức khỏe hệ cơ xương, điều hòa huyết áp, giảm đau lưng mỏi gối.</h4>
+                    </div>
+                    <p>Giá: 550.000 VNĐ/kg</p>
+                    <label for="weightAmountDoTrong">Số lượng</label>
+                    <input type="number" id="weightAmountDoTrong" placeholder="Số lượng">
+                    <select id="weightTypeDoTrong">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Đỗ Trọng', 550000, 'DoTrong')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Câu Đằng">
+                    <img src="https://trungtamduoclieu.vn/files/assets/cau_dang_chat_luong.jpg" alt="Câu Đằng">
+                    <h3>Câu Đằng</h3>
+                    <div class="main">
+                        <h4>Giúp tăng cường sức khỏe hệ cơ xương, điều hòa huyết áp, giảm đau lưng mỏi gối.</h4>
+                    </div>
+                    <p>Giá: 450.000 VNĐ/kg</p>
+                    <label for="weightAmountCauDang">Số lượng</label>
+                    <input type="number" id="weightAmountCauDang" placeholder="Số lượng">
+                    <select id="weightTypeCauDang">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Câu Đằng', 450000, 'CauDang')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Đương Quy">
+                    <img src="https://cdn.nhathuoclongchau.com.vn/unsafe/https://cms-prod.s3-sgn09.fptcloud.com/duong_quy_4_a39f8fe32e.jpeg" alt="Đương Quy">
+                    <h3>Đương Quy</h3>
+                    <div class="main">
+                        <h4>Giúp lưu thông máu, điều trị đau bụng kinh, cải thiện chức năng sinh sản.</h4>
+                    </div>
+                    <p>Giá: 1.000.000 VNĐ/kg</p>
+                    <label for="weightAmountDuongQuy">Số lượng</label>
+                    <input type="number" id="weightAmountDuongQuy" placeholder="Số lượng">
+                    <select id="weightTypeDuongQuy">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Đương Quy', 1000000, 'DuongQuy')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Nhung Huơu">
+                    <img src="https://www.thuocdantoc.org/wp-content/uploads/2019/11/nhung-huou-2.jpg" alt="Nhung Huơu">
+                    <h3>Nhung Huơu</h3>
+                    <div class="main">
+                        <h4>Bổ máu, tăng cường sinh lực
+                            Tăng cường sức khỏe sinh sản
+                            Hỗ trợ cải thiện suy nhược cơ thể và chống lão hóa.</h4>
+                    </div>
+                    <p>Giá: 30.000.000 VNĐ/kg</p>
+                    <label for="weightAmountNhungHuou">Số lượng</label>
+                    <input type="number" id="weightAmountNhungHuou" placeholder="Số lượng">
+                    <select id="weightTypeNhungHuou">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Nhung Huơu', 30000000, 'NhungHuou')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Yến Sào">
+                    <img src="https://idodesign.vn/wp-content/uploads/2023/07/mau-logo-yen-sao-dep-khac-biet-tao-nen-dang-cap-1.jpg" alt="Yến Sào">
+                    <h3>Yến Sào</h3>
+                    <div class="main">
+                        <h4>Bổ phế, tăng cường miễn dịch
+                            Cải thiện tiêu hóa, làm đẹp da
+                            Hỗ trợ phục hồi sức khỏe sau ốm.</h4>
+                    </div>
+                    <p>Giá: 40.000.000 VNĐ/kg</p>
+                    <label for="weightAmountYenSao">Số lượng</label>
+                    <input type="number" id="weightAmountYenSao" placeholder="Số lượng">
+                    <select id="weightTypeYenSao">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Yến Sào', 40000000, 'YenSao')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Cá Ngựa">
+                    <img src="https://cdn.medigoapp.com/product/ca_ngua_2_6cf5186753.jpg" alt="Cá Ngựa">
+                    <h3>Cá Ngựa</h3>
+                    <div class="main">
+                        <h4>Tăng cường sinh lực nam giới
+                            Hỗ trợ điều trị vô sinh, kích thích sinh sản
+                            Tăng tuần hoàn máu, giảm viêm.</h4>
+                    </div>
+                    <p>Giá: 3.000.000 VNĐ/kg</p>
+                    <label for="weightAmountCaNgua">Số lượng</label>
+                    <input type="number" id="weightAmountCaNgua" placeholder="Số lượng">
+                    <select id="weightTypeCaNgua">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Cá Ngựa', 3000000, 'CaNgua')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Sò Huyết">
+                    <img src="https://www.vinmec.com/static/uploads/medium_20220121_020417_272784_cay_so_huyet_3_max_1800x1800_jpg_55e9ec1082.jpg" alt="Sò Huyết">
+                    <h3>Sò Huyết</h3>
+                    <div class="main">
+                        <h4>Giàu protein, sắt, bổ máu
+                            Tăng cường sức khỏe tim mạch
+                            Cải thiện sức đề kháng, tốt cho xương khớp.</h4>
+                    </div>
+                    <p>Giá: 1.500.000 VNĐ/kg</p>
+                    <label for="weightAmountSoHuyet">Số lượng</label>
+                    <input type="number" id="weightAmountSoHuyet" placeholder="Số lượng">
+                    <select id="weightTypeSoHuyet">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Sò Huyết', 1500000, 'SoHuyet')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Mật Ong">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA_jB9eDHBWOj6ublFxU4hsJFEYcrKpaxVMg&s" alt="Mật Ong">
+                    <h3>Mật Ong</h3>
+                    <div class="main">
+                        <h4>Chống viêm, kháng khuẩn
+                            Tăng cường miễn dịch, làm dịu cổ họng
+                            Làm đẹp da, hỗ trợ tiêu hóa.</h4>
+                    </div>
+                    <p>Giá: 300.000 VNĐ/lít</p>
+                    <label for="weightAmountMatOng">Số lượng</label>
+                    <input type="number" id="weightAmountMatOng" placeholder="Số lượng">
+                    <select id="weightTypeMatOng">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Mật Ong', 300000, 'MatOng')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Hải Sâm">
+                    <img src="https://cdn.tgdd.vn/Files/2021/08/05/1373188/dac-diem-cong-dung-va-cach-su-dung-hai-sam-bien-202108051107350334.jpg" alt="Hải Sâm">
+                    <h3>Hải Sâm</h3>
+                    <div class="main">
+                        <h4>Tăng cường sức khỏe xương khớp
+                            Giàu collagen, giúp làm đẹp da
+                            Hỗ trợ tiêu hóa, cải thiện tuần hoàn máu.</h4>
+                    </div>
+                    <p>Giá: 2.500.000 VNĐ/kg</p>
+                    <label for="weightAmountHaiSam">Số lượng</label>
+                    <input type="number" id="weightAmountHaiSam" placeholder="Số lượng">
+                    <select id="weightTypeHaiSam">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Hải Sâm', 2500000, 'HaiSam')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Cao Khỉ">
+                    <img src="https://images.elipsport.vn/anh-seo-tin-tuc/2024/2/29/2315/cao-khi-co-tac-dung-gi-1.jpg" alt="Cao Khỉ">
+                    <h3>Cao Khỉ</h3>
+                    <div class="main">
+                        <h4>Bổ thận, tăng cường sinh lực
+                            Cải thiện sức khỏe sinh sản
+                            Tăng sức đề kháng, hỗ trợ điều trị các bệnh suy nhược cơ thể.</h4>
+                    </div>
+                    <p>Giá: 2.000.000 VNĐ/kg</p>
+                    <label for="weightAmountCaoKhi">Số lượng</label>
+                    <input type="number" id="weightAmountCaoKhi" placeholder="Số lượng">
+                    <select id="weightTypeCaoKhi">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Cao Khỉ', 2000000, 'CaoKhi')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Nấm Linh Chi">
+                    <img src="https://static.kinhtedothi.vn/images/upload/2022/08/29/nam1-1661490002.jpg" alt="Nấm Linh Chi">
+                    <h3>Nấm Linh Chi</h3>
+                    <div class="main">
+                        <h4>Tăng cường hệ miễn dịch
+                            Chống oxy hóa, làm chậm quá trình lão hóa
+                            Hỗ trợ điều trị ung thư và các bệnh lý về gan, tim mạch
+                            Giảm căng thẳng, lo âu.</h4>
+                    </div>
+                    <p>Giá:4.000.000 VNĐ/kg</p>
+                    <label for="weightAmountNamLinhChi">Số lượng</label>
+                    <input type="number" id="weightAmountNamLinhChi" placeholder="Số lượng">
+                    <select id="weightTypeNamLinhChi">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Nấm Linh Chi', 4000000, 'NamLinhChi')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Mật Nhân">
+                    <img src="https://caycanhhaidang.com/wp-content/uploads/2016/12/mat-nhan.jpg" alt="Mật Nhân">
+                    <h3>Mật Nhân</h3>
+                    <div class="main">
+                        <h4>Bổ thận, tăng cường sinh lực, hỗ trợ cải thiện tình trạng yếu sinh lý, tăng cường sức đề kháng, và giúp giảm stress.</h4>
+                    </div>
+                    <p>Giá:900.000 VNĐ/kg</p>
+                    <label for="weightAmountMatNhan">Số lượng</label>
+                    <input type="number" id="weightAmountMatNhan" placeholder="Số lượng">
+                    <select id="weightTypeMatNhan">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Mật Nhân', 900000, 'MatNhan')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Khúc Khắc">
+                    <img src="data:image/jpeg;base64,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" alt="Khúc Khắc">
+                    <h3>Khúc Khắc</h3>
+                    <div class="main">
+                        <h4>Giúp điều hòa kinh nguyệt, giảm đau bụng và hỗ trợ cải thiện tình trạng mất ngủ. Nó cũng có tác dụng kháng viêm và tăng cường sức đề kháng.</h4>
+                    </div>
+                    <p>Giá:500.000 VNĐ/kg</p>
+                    <label for="weightAmountKhucKhac">Số lượng</label>
+                    <input type="number" id="weightAmountKhucKhac" placeholder="Số lượng">
+                    <select id="weightTypeKhucKhac">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Khúc Khắc', 500000, 'KhucKhac')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Nghệ Vàng">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQma_Fca16K9AIiG52gZyyPK_FxWcpWJrf18Q&s" alt="Nghệ Vàng">
+                    <h3>Nghệ Vàng</h3>
+                    <div class="main">
+                        <h4>Chống viêm, hỗ trợ tiêu hóa, làm lành vết thương, và có khả năng chống oxy hóa. Nó thường được sử dụng để cải thiện sức khỏe gan, hỗ trợ điều trị các bệnh lý về đường tiêu hóa, và làm đẹp da.</h4>
+                    </div>
+                    <p>Giá:100.000 VNĐ/kg</p>
+                    <label for="weightAmountNgheVang">Số lượng</label>
+                    <input type="number" id="weightAmountNgheVang" placeholder="Số lượng">
+                    <select id="weightTypeNgheVang">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Nghệ Vàng', 100000, 'NgheVang')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Gừng Gió">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwAkmXCDT-OW3xiDD8uCu0oudq5atoseCluQ&s" alt="Gừng Gió">
+                    <h3>Gừng Gió</h3>
+                    <div class="main">
+                        <h4>Làm ấm cơ thể, giúp tiêu hóa, giảm đau bụng, chống buồn nôn và hỗ trợ điều trị cảm lạnh. Nó cũng được sử dụng trong các bài thuốc để giảm viêm và tăng cường sức đề kháng.</h4>
+                    </div>
+                    <p>Giá:200.000 VNĐ/kg</p>
+                    <label for="weightAmountGungGio">Số lượng</label>
+                    <input type="number" id="weightAmountGungGio" placeholder="Số lượng">
+                    <select id="weightTypeGungGio">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Gừng Gió', 200000, 'GungGio')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Riềng">
+                    <img src="https://media.istockphoto.com/id/1226214009/vi/anh/g%E1%BB%ABng-t%C6%B0%C6%A1i-v%E1%BB%9Bi-l%C3%A1-tr%C3%AAn-n%E1%BB%81n-tr%E1%BA%AFng-h%C3%ACnh-%E1%BA%A3nh-th%C6%B0%C6%A1ng-m%E1%BA%A1i-c%E1%BB%A7a-c%C3%A2y-thu%E1%BB%91c-b%E1%BB%8B-c%C3%B4-l%E1%BA%ADp-v%E1%BB%9Bi-con-%C4%91%C6%B0%E1%BB%9Dng-c%E1%BA%AFt.jpg?s=612x612&w=0&k=20&c=o6ejXJ15VdCC43m4Lw88K6FmBOiITRMSE3UcyaVhxyo=" alt="Riềng">
+                    <h3>Riềng</h3>
+                    <div class="main">
+                        <h4>Hỗ trợ tiêu hóa, giảm đau bụng, chống nôn và kháng viêm. Nó cũng có tác dụng giúp làm ấm cơ thể, hỗ trợ điều trị các vấn đề về hô hấp như ho và cảm lạnh.</h4>
+                    </div>
+                    <p>Giá:150.000 VNĐ/kg</p>
+                    <label for="weightAmountRieng">Số lượng</label>
+                    <input type="number" id="weightAmountRieng" placeholder="Số lượng">
+                    <select id="weightTypeRieng">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Riềng', 150000, 'Rieng')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Chuối Rừng">
+                    <img src="https://amthuctaybac.net/wp-content/uploads/2022/03/chuoi-hot-rung.jpg" alt="Chuối Rừng">
+                    <h3>Chuối Rừng</h3>
+                    <div class="main">
+                        <h4>Tác dụng bổ dưỡng, giúp an thần, tốt cho hệ tiêu hóa và hỗ trợ điều trị các vấn đề về dạ dày. Ngoài ra, nó còn có thể được sử dụng để giảm đau, điều trị viêm loét và hỗ trợ phục hồi sức khỏe.</h4>
+                    </div>
+                    <p>Giá:300.000 VNĐ/kg</p>
+                    <label for="weightAmountChuoiRung">Số lượng</label>
+                    <input type="number" id="weightAmountChuoiRung" placeholder="Số lượng">
+                    <select id="weightTypeChuoiRung">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Chuối Rừng', 300000, 'ChuoiRung')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Đinh Lăng">
+                    <img src="https://nongsan.kinhbacweb.com/wp-content/uploads/2021/09/tra-dinh-lang-say-kho-3-min.jpg" alt="Đinh Lăng">
+                    <h3>Đinh Lăng</h3>
+                    <div class="main">
+                        <h4>Tác dụng bồi bổ sức khỏe, tăng cường sức đề kháng, hỗ trợ tiêu hóa, và giảm căng thẳng. Ngoài ra, nó còn có tác dụng kháng viêm, lợi tiểu và giúp cải thiện tình trạng mệt mỏi.</h4>
+                    </div>
+                    <p>Giá:500.000 VNĐ/kg</p>
+                    <label for="weightAmountDinhLang">Số lượng</label>
+                    <input type="number" id="weightAmountDinhLang" placeholder="Số lượng">
+                    <select id="weightTypeDinhLang">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Đinh Lăng', 500000, 'DinhLang')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Trinh Nữ Hoàng Cung">
+                    <img src="https://napro.vn/wp-content/uploads/2019/07/Trinh-n%E1%BB%AF-ho%C3%A0ng-cung-01.jpg" alt="Trinh Nữ Hoàng Cung">
+                    <h3>Trinh Nữ Hoàng Cung</h3>
+                    <div class="main">
+                        <h4>Hỗ trợ điều trị các vấn đề liên quan đến phụ khoa, như u xơ tử cung và bệnh lý về buồng trứng. Nó cũng có tác dụng giảm đau, chống viêm, và có thể hỗ trợ trong điều trị bệnh tiểu đường.</h4>
+                    </div>
+                    <p>Giá:400.000 VNĐ/kg</p>
+                    <label for="weightAmountTrinhNuHoangCung">Số lượng</label>
+                    <input type="number" id="weightAmountTrinhNuHoangCung" placeholder="Số lượng">
+                    <select id="weightTypeTrinhNuHoangCung">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Trinh Nữ Hoàng Cung', 400000, 'TrinhNuHoangCung')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Chè Rừng">
+                    <img src="https://huongnui.vn/wp-content/uploads/2018/01/ch%C3%A8-d%C3%A2y-kh%C3%B4-1.jpg" alt="Chè Rừng">
+                    <h3>Chè Rừng</h3>
+                    <div class="main">
+                        <h4>Giúp tăng cường sức đề kháng, hỗ trợ tiêu hóa, giảm cholesterol và cải thiện sức khỏe tim mạch. Nó cũng có tác dụng chống oxy hóa và giúp giảm căng thẳng, mệt mỏi.</h4>
+                    </div>
+                    <p>Giá:700.000 VNĐ/kg</p>
+                    <label for="weightAmountCheRung">Số lượng</label>
+                    <input type="number" id="weightAmountCheRung" placeholder="Số lượng">
+                    <select id="weightTypeCheRung">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Chè Rừng', 700000, 'CheRung')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Củ Ráy">
+                    <img src="https://suckhoedoisong.qltns.mediacdn.vn/324455921873985536/2023/11/23/anh-duoc-tao-boi-tranmaihuongskds-luc-4724203628245-17007141882511481307782.png" alt="Củ Ráy">
+                    <h3>Củ Ráy</h3>
+                    <div class="main">
+                        <h4>Thanh nhiệt, giải độc, giúp tiêu hóa và hỗ trợ điều trị các vấn đề về đường tiêu hóa như đầy bụng, khó tiêu. Nó cũng được sử dụng trong y học cổ truyền để giảm viêm và kháng khuẩn.</h4>
+                    </div>
+                    <p>Giá:300.000 VNĐ/kg</p>
+                    <label for="weightAmountCuaRay">Số lượng</label>
+                    <input type="number" id="weightAmountCuaRay" placeholder="Số lượng">
+                    <select id="weightTypeCuaRay">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Củ Ráy', 300000, 'CuaRay')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+
+                <div class="product" data-name="Cây Kim Giao">
+                    <img src="https://cdn.nhathuoclongchau.com.vn/unsafe/https://cms-prod.s3-sgn09.fptcloud.com/Cay_giao_co_tac_dung_gi_16203b5c9e.jpg" alt="Cây Kim Giao">
+                    <h3>Cây Kim Giao</h3>
+                    <div class="main">
+                        <h4>Hỗ trợ tiêu hóa, giúp thanh nhiệt, giải độc, và có tác dụng lợi tiểu. Nó cũng được sử dụng để điều trị các vấn đề về hô hấp và tăng cường sức khỏe tổng thể.</h4>
+                    </div>
+                    <p>Giá:400.000 VNĐ/kg</p>
+                    <label for="weightAmountCayKimGiao">Số lượng</label>
+                    <input type="number" id="weightAmountCayKimGiao" placeholder="Số lượng">
+                    <select id="weightTypeCayKimGiao">
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                    </select>
+                    <div class="Them">
+                        <button class="btn" onclick="addToCart('Cây Kim Giao', 400000, 'CayKimGiao')">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <marquee behavior="alternate" direction="left">
+            <p>&copy; 2024 Cửa Hàng Thuốc Đông Y. Chúc sức khỏe quý khách.</p>
+        </marquee>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
